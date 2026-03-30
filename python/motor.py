@@ -14,7 +14,6 @@ class CubeMarsMotor:
         # Send a CAN message to disable the motor
         self.can_bus.send_message(self.can_id, [0xFF]*7 + [0xFD])
         
-        
     def zero(self):
         self.can_bus.send_message(self.can_id, [0xFF]*7 + [0xFE])
         
@@ -22,5 +21,6 @@ class CubeMarsMotor:
     def clear_error(self):
         self.can_bus.send_message(self.can_id, [0xFF]*7 + [0xFB])
         
+        
     def get_state(self):
-        self.can_bus.receive_message()
+        return self.can_bus.receive_message()
