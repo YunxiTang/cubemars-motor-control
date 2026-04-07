@@ -1,6 +1,6 @@
 #!/bin/bash
 
-sudo slcand -o -c -sB /dev/ttyACM0 slcan0
+sudo slcand -o -c -sB /dev/ttyACM1 slcan0
 
 sudo ip link set slcan0 down
 
